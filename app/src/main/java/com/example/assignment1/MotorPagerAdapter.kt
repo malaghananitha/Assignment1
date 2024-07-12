@@ -4,7 +4,6 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -58,11 +57,11 @@ class MotorPagerAdapter (private val context: Context, private val dataList: Lis
             m_lastAmountTextView.text = pageData.m_lastAmountString
             if(  pageData.m_isEligible ){
                 m_eligibilityStatusTextView.text ="Eligible"
-                m_secondDottedLineInfoIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.eligible_icon))
+                m_secondDottedLineInfoIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_eligible))
 
             }else{
                 m_eligibilityStatusTextView.text ="Not Eligible"
-                m_secondDottedLineInfoIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ineligible_icon))
+                m_secondDottedLineInfoIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_ineligible))
 
             }
 

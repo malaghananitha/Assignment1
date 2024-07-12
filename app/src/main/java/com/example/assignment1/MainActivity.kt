@@ -19,15 +19,16 @@ import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
-import androidx.core.graphics.drawable.DrawableCompat
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.navigation.NavigationView
 
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var drawerLayout: DrawerLayout
+
 
     private lateinit var viewPager: ViewPager
     private lateinit var pagerAdapter: MyPagerAdapter
@@ -46,7 +47,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportActionBar?.setHomeAsUpIndicator(R.drawable.menu_icon)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_menu)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
@@ -54,7 +55,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         drawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
-        navView.setNavigationItemSelectedListener(this)
 
         // For hamburger icon in toolbar to open/close drawer
         val toggle = ActionBarDrawerToggle(
@@ -63,6 +63,31 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         )
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
+        navView.setNavigationItemSelectedListener { menuItem ->
+            // Handle navigation view item clicks here.
+            when (menuItem.itemId) {
+                R.id.nav_knowledge_centre-> {
+                    // Handle the home action
+                    //replaceFragment(HomeFragment())
+                }
+                R.id.nav_servicing -> {
+                    // Handle the profile action
+                    //replaceFragment(ProfileFragment())
+                }
+                /*R.id.nav_settings -> {
+                    // Handle the settings action
+                    replaceFragment(SettingsFragment())
+                }
+                R.id.nav_logout -> {
+                    // Handle the logout action
+                    // Implement logout logic here
+                }*/
+            }
+
+            // Close the drawer
+            drawerLayout.closeDrawer(GravityCompat.START)
+            true
+        }
 
 
         val quickAction = findViewById<View>(R.id.header_quick_action)
@@ -107,7 +132,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val healthImage = healthView.findViewById<ImageView>(R.id.quick_quote_image)
         val healthText = healthView.findViewById<TextView>(R.id.quick_quote_text)
         healthText.text = "Health"
-        val healthDrawable = ContextCompat.getDrawable(this, R.drawable.health_icon)
+        val healthDrawable = ContextCompat.getDrawable(this, R.drawable.ic_health)
         healthImage.setImageDrawable(healthDrawable)
 
 // Motor
@@ -115,7 +140,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val motorImage = motorView.findViewById<ImageView>(R.id.quick_quote_image)
         val motorText = motorView.findViewById<TextView>(R.id.quick_quote_text)
         motorText.text = "Motor"
-        val motorDrawable = ContextCompat.getDrawable(this, R.drawable.motor_icon)
+        val motorDrawable = ContextCompat.getDrawable(this, R.drawable.ic_motor)
         motorImage.setImageDrawable(motorDrawable)
 
 // Travel
@@ -123,7 +148,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val travelImage = travelView.findViewById<ImageView>(R.id.quick_quote_image)
         val travelText = travelView.findViewById<TextView>(R.id.quick_quote_text)
         travelText.text = "Travel"
-        val travelDrawable = ContextCompat.getDrawable(this, R.drawable.plane_icon)
+        val travelDrawable = ContextCompat.getDrawable(this, R.drawable.ic_travel)
         travelImage.setImageDrawable(travelDrawable)
 
 // Comm.lines
@@ -234,7 +259,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         h_earnedPremiumTextView.text = "Achieved"
         h_targetAmountTextView.text = "75K"
         h_earnedAmountTextView.text = "20.5K"
-        h_secondDottedLineInfoIcon.setImageResource(R.drawable.eligible_icon)
+        h_secondDottedLineInfoIcon.setImageResource(R.drawable.ic_eligible)
         h_eligibilityStatusTextView.text = "Eligible"
         h_circularProgressBar.progress = 90
         h_circularProgressBar.max = 100
@@ -317,7 +342,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         t_earnedPremiumTextView.text = "Achieved"
         t_targetAmountTextView.text = "75K"
         t_earnedAmountTextView.text = "20.5K"
-        t_secondDottedLineInfoIcon.setImageResource(R.drawable.eligible_icon)
+        t_secondDottedLineInfoIcon.setImageResource(R.drawable.ic_eligible)
         t_eligibilityStatusTextView.text = "Eligible"
         t_circularProgressBar.progress = 60
         t_circularProgressBar.max = 100
@@ -358,7 +383,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         cl_earnedPremiumTextView.text = "Achieved"
         cl_targetAmountTextView.text = "₹75K"
         cl_earnedAmountTextView.text = "₹55K"
-        cl_secondDottedLineInfoIcon.setImageResource(R.drawable.eligible_icon)
+        cl_secondDottedLineInfoIcon.setImageResource(R.drawable.ic_eligible)
         cl_eligibilityStatusTextView.text = "Eligible"
         cl_circularProgressBar.progress = 75
         cl_circularProgressBar.max = 100
@@ -371,7 +396,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
     }
-
 
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -460,11 +484,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // Replace with your actual data creation logic
         return listOf(
             PageData( "Product 1","Product 1 Description", "Product 1 SubDescription",
-                R.drawable.health_icon,"Button 1"),
+                R.drawable.ic_health,"Button 1"),
             PageData("Product 2","Product 2 Description", "Product 2 SubDescription",
-                R.drawable.motor_icon,  "Button 2"),
+                R.drawable.ic_motor,  "Button 2"),
             PageData( "Product 3","Product 3 Description", "Product 3 SubDescription",
-                R.drawable.plane_icon,"Button 3")
+                R.drawable.ic_travel,"Button 3")
         )
     }
 
@@ -528,8 +552,5 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     }
 
-    override fun onNavigationItemSelected(p0: MenuItem): Boolean {
-        TODO("Not yet implemented")
-    }
 
 }

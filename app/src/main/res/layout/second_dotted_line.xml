@@ -17,7 +17,7 @@
         android:id="@+id/secondDottedLineInfoIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ineligible_icon"/>
+        android:src="@drawable/ic_ineligible"/>
     <TextView
         android:id="@+id/eligibilityStatusTextView"
         android:layout_width="wrap_content"

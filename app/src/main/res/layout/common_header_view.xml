@@ -19,7 +19,7 @@
         android:layout_height="18dp"
         android:layout_marginLeft="5dp"
         android:layout_gravity="center_vertical"
-        android:src = "@drawable/info_icon"
+        android:src = "@drawable/ic_info"
         android:visibility="gone"/>
 
 </LinearLayout>
