@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Assignment1</string>
+    <string name="_02_may_02_aug_24">02 May - 02 Aug\'24</string>
+    <string name="total_policies">Total Policies</string>
+    <string name="search">search</string>
+    <string name="notifications">notifications</string>
+    <string name="empty_string"></string>
+    <string name="health">Health</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+</resources>

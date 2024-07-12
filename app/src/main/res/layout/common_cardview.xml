@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/fiscalYearTextView"
+            style="@style/CustomHeaderViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FY 24-25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/dateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="As on 12 Jun'24"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/dotted_view1"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/dotted_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fiscalYearTextView" />
+
+        <TextView
+            android:id = "@+id/camgaign_headerline"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Motor Quaterly Campaign"
+            android:layout_marginTop="10dp"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/dotted_view1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible"/>
+        <ProgressBar
+            android:id="@+id/circularProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="75dp"
+            android:max="100"
+            android:padding="10dp"
+            android:progress="75"
+            android:progressDrawable="@drawable/progress_circle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dotted_view1" />
+
+        <LinearLayout
+            android:id="@+id/leftCircularBarView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/circularProgressBar"
+            app:layout_constraintTop_toTopOf="@+id/circularProgressBar"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/targetPremiumTextView"
+                style="@style/CustomHeaderViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Target Premium"
+
+                />
+            <TextView
+                android:id="@+id/wtd_gwpLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(Wtd.GWP)"
+                android:textStyle="bold"
+                android:visibility="visible"
+                />
+
+            <TextView
+                android:id="@+id/targetAmountTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₹1.1Cr"
+                android:textSize="30sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                 />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/rightCircularBarView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/circularProgressBar"
+            app:layout_constraintTop_toTopOf="@+id/circularProgressBar"
+            app:layout_constraintEnd_toEndOf="parent">
+            <TextView
+                android:id="@+id/earnedPremiumTextView"
+                style="@style/CustomHeaderViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Earned Premium"
+                />
+            <TextView
+                android:id="@+id/wtd_gwpRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(Wtd.GWP)"
+                android:textStyle="bold"
+                android:visibility="visible"
+                />
+
+            <TextView
+                android:id="@+id/earnedAmountTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₹12.5L"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                />
+
+
+        </LinearLayout>
+
+
+
+        <!-- eligibilityStatusTextView -->
+        <include
+            android:id="@+id/dotted_view2"
+            layout="@layout/second_dotted_line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/circularProgressBar" />
+
+
+        <!-- Progress Bar Section -->
+        <ProgressBar
+            android:id="@+id/strightProgressBar"
+            style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="60dp"
+            android:progress="25"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dotted_view2"
+            android:visibility="gone"/>
+
+        <!-- Earned, WTD:GWP, and Target -->
+        <TextView
+            android:id="@+id/earnedTextView"
+            style="@style/CustomHeaderViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Earned"
+            app:layout_constraintBottom_toTopOf="@+id/strightProgressBar"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/wtdGwpTextView"
+            style="@style/CustomHeaderViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WTD:GWP"
+            app:layout_constraintBottom_toTopOf="@+id/strightProgressBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/targetTextView"
+            style="@style/CustomHeaderViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Target"
+            app:layout_constraintBottom_toTopOf="@+id/strightProgressBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/earnedAmountText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="50,000"
+            android:textColor="#30b548"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/strightProgressBar"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/targetAmountText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2Cr"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/strightProgressBar"
+            android:visibility="gone"/>
+
+        <!-- Bottom Section -->
+        <include
+            android:id="@+id/diamondClubTextView"
+            layout="@layout/common_header_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/strightProgressBar"
+            />
+
+        <TextView
+            android:id="@+id/lastAmountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="₹1.5L"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/diamondClubTextView"
+            android:visibility="visible"/>
+
+
+        <!-- Button -->
+        <Button
+            android:id="@+id/viewIncentiveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rounded_button"
+            android:padding="15dp"
+            android:text="View Incentive Details"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lastAmountTextView"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

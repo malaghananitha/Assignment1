@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_knowledge_centre"
+            android:icon="@drawable/ic_knowledge_centre"
+            android:title="Knowledge Centre">
+            <menu>
+                <item android:title="Products"/>
+                <item android:title="Engagement"/>
+                <item android:title="Agency Connect"/>
+            </menu>
+        </item>
+        <item
+            android:id="@+id/nav_servicing"
+            android:icon="@drawable/ic_knowledge_centre"
+            android:title="Servicing">
+            <menu>
+                <item android:title="Claims"/>
+                <item android:title="Endorsements"/>
+            </menu>
+        </item>
+        <!-- Add other menu items similarly -->
+    </group>
+</menu>

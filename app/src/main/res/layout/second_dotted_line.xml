@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/secondDottedLine"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <View
+        android:id="@+id/dotted_first"
+        android:layout_width="150dp"
+        android:layout_height="5dp"
+        android:foreground="@drawable/dotted_line"
+        android:layout_gravity="center"
+
+        />
+    <ImageView
+        android:id="@+id/secondDottedLineInfoIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ineligible_icon"/>
+    <TextView
+        android:id="@+id/eligibilityStatusTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Not Eligible"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+       />
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="5dp"
+        android:foreground="@drawable/dotted_line"
+        android:layout_gravity="center"
+
+        />
+        />
+
+</LinearLayout>
